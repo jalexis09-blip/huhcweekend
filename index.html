@@ -244,9 +244,6 @@ footer{margin-top:56px;padding-top:20px;border-top:3px solid var(--navy);font-si
     el.innerHTML='<span class="num">'+d+'</span><span class="lbl">days</span><span class="num">'+pad(h)+'</span><span class="lbl">hrs</span><span class="num">'+pad(m)+'</span><span class="lbl">min</span><span class="num">'+pad(sec)+'</span><span class="lbl">sec</span><span class="lbl" style="flex-basis:100%">until the kickoff</span>';
   }
   tick(); setInterval(tick,1000);
-  // channel tracking: huhcweekend.com/?r=ig etc.
-  var r=new URLSearchParams(location.search).get("r");
-  if(r){var send=function(){if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path:"source-"+r.replace(/[^a-z0-9_-]/gi,"").slice(0,20),title:"Source: "+r,event:true})}else setTimeout(send,500)};send();}
 })();
 </script>
 </body>
