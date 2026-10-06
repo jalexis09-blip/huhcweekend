@@ -17,13 +17,14 @@
 <meta name="theme-color" content="#132a6b">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23132a6b'/%3E%3Ctext x='32' y='44' font-family='Arial Black,Arial' font-weight='900' font-size='30' text-anchor='middle' fill='%23fff'%3EHU%3C/text%3E%3C/svg%3E">
 <style>html{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<script data-goatcounter="https://huhcweekend.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Figtree:wght@400;500;700&display=swap">
 <style>
-/* Layout: a weekend "run of show" — one hero, a day-by-day itinerary strip, then a stacked event card per night with flyer + one big ticket button. */
+/* Layout: a weekend "run of show": one hero, a day-by-day itinerary strip, then a stacked event card per night with flyer + one big ticket button. */
 :root{
   --bg:#f3f1ec; --surface:#ffffff; --ink:#0f1a3a; --muted:#56607a; --line:#dcd8cf;
   --navy:#132a6b; --red:#d6262e; --red-ink:#ffffff; --chip:#e8ecf7;
@@ -79,6 +80,22 @@ footer{margin-top:56px;padding-top:20px;border-top:3px solid var(--navy);font-si
   .ev{grid-template-columns:minmax(0,1fr)}
   .ev img{max-width:420px}
 }
+
+.count{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;margin-top:6px}
+.count .num{font-family:var(--display);font-weight:900;font-size:clamp(34px,6vw,52px);line-height:1;color:var(--red);font-variant-numeric:tabular-nums}
+.count .lbl{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-right:8px}
+.count .msg{font-weight:700;color:var(--navy)}
+.tables{margin-top:18px;padding:18px;border:2px solid var(--navy);background:var(--surface);display:grid;gap:10px}
+.tables h3{margin:0;font-family:var(--display);font-weight:900;font-size:28px;text-transform:uppercase;color:var(--navy);line-height:1}
+.tables p{margin:0;max-width:62ch}
+.tables .num-txt{font-variant-numeric:tabular-nums;font-weight:700}
+.btn.navy{background:var(--navy);border-color:var(--navy);color:var(--bg)}
+.btn.small{padding:9px 14px;font-size:14px}
+.cal{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;color:var(--muted)}
+.cal a{color:var(--navy);font-weight:700}
+.stick{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--navy);display:none;justify-content:center;gap:10px;z-index:10}
+.stick a{color:var(--bg);font-weight:700;text-decoration:none;font-size:15px}
+@media (max-width:760px){.stick{display:flex}.wrap{padding-bottom:90px}}
 @media (prefers-reduced-motion:no-preference){.btn{transition:filter .15s}}
 </style>
 
@@ -87,6 +104,7 @@ footer{margin-top:56px;padding-top:20px;border-top:3px solid var(--navy);font-si
     <div class="eyebrow">Howard Homecoming · Oct 15–18, 2026 · Washington, DC</div>
     <h1>Homecoming<span>Weekend 2026</span></h1>
     <p class="lede">Five parties, four days, one weekend at The Mecca. Grab your tickets or lock in a table for your crew below. Prices go up and these sell out, so don't wait until you land.</p>
+    <div class="count" id="count" aria-live="polite"><span class="msg">Homecoming kicks off Thursday, Oct 15 at 6 PM.</span></div>
   </header>
 
   <nav class="run" aria-label="Weekend schedule">
@@ -97,6 +115,15 @@ footer{margin-top:56px;padding-top:20px;border-top:3px solid var(--navy);font-si
     <a href="#farewell-brunch"><span class="d">Sun 10.18</span><span class="n">Farewell Brunch</span><span class="t">12–9P · The Continent</span></a>
   </nav>
   <p class="combo"><b>Friday double:</b> Dynasty Continues ends at 10P, Noir Nostalgia starts at 10P. Rooftop happy hour in your all-black fit, then straight to SAX.</p>
+  <section class="tables" id="tables">
+    <h3>Want a table for your crew?</h3>
+    <p>Lines, classes, chapters, birthdays: I'll get your group a section at any of the five parties. Text me the night and how many people.</p>
+    <p class="num-txt">Joel · 773-425-2390 · IG @JoePromoL</p>
+    <div class="btns">
+      <a class="btn" href="sms:+17734252390?&body=Hey%20Joel%21%20I%20want%20a%20table%20for%20Homecoming.%20Night%3A%20___%20%20Group%20size%3A%20___" data-goatcounter-click="text-joel-main">Text Joel for a table</a>
+      <a class="btn ghost" href="https://instagram.com/JoePromoL" target="_blank" rel="noopener" data-goatcounter-click="ig-joel-main">DM @JoePromoL</a>
+    </div>
+  </section>
 
   <main class="events">
     <article class="ev" id="welcome-home-bison">
@@ -111,8 +138,10 @@ footer{margin-top:56px;padding-top:20px;border-top:3px solid var(--navy);font-si
           <dt>Vibe</dt><dd>Happy hour, dinner, cocktails, late night across a four-level venue</dd>
         </dl>
         <div class="btns">
-          <a class="btn" href="https://whb2026.eventbrite.com/?aff=Joel" target="_blank" rel="noopener">Get tickets + tables →</a>
+          <a class="btn" href="https://whb2026.eventbrite.com/?aff=Joel" target="_blank" rel="noopener" data-goatcounter-click="tix-welcome-home-bison">Get tickets + tables →</a>
+          <a class="btn ghost small" href="sms:+17734252390?&body=Hey%20Joel%21%20I%20want%20a%20table%20for%20Homecoming.%20Night%3A%20___%20%20Group%20size%3A%20___" data-goatcounter-click="text-joel-welcome-home-bison">Text Joel for a table</a>
         </div>
+        <div class="cal">Add to calendar: <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Welcome+Home+Bison+%28HU+Homecoming+Kickoff%29&amp;dates=20261015T220000Z%2F20261016T060000Z&amp;location=SOST%2C+1901+9th+St+NW%2C+Washington%2C+DC&amp;details=Tickets+%2B+tables%3A+https%3A%2F%2Fwhb2026.eventbrite.com%2F%3Faff%3DJoel%0ATables%3A+text+Joel+773-425-2390%0Ahuhcweekend.com" target="_blank" rel="noopener" data-goatcounter-click="cal-g-welcome-home-bison">Google</a> · <a href="welcome-home-bison.ics" data-goatcounter-click="cal-ics-welcome-home-bison">Apple / Outlook</a></div>
       </div>
     </article>
 
@@ -128,8 +157,10 @@ footer{margin-top:56px;padding-top:20px;border-top:3px solid var(--navy);font-si
           <dt>Tables</dt><dd>Happy hour bottle specials from $275</dd>
         </dl>
         <div class="btns">
-          <a class="btn" href="https://dynastycontinues2026.eventbrite.com/?aff=Joel" target="_blank" rel="noopener">Get tickets + tables →</a>
+          <a class="btn" href="https://dynastycontinues2026.eventbrite.com/?aff=Joel" target="_blank" rel="noopener" data-goatcounter-click="tix-dynasty-continues">Get tickets + tables →</a>
+          <a class="btn ghost small" href="sms:+17734252390?&body=Hey%20Joel%21%20I%20want%20a%20table%20for%20Homecoming.%20Night%3A%20___%20%20Group%20size%3A%20___" data-goatcounter-click="text-joel-dynasty-continues">Text Joel for a table</a>
         </div>
+        <div class="cal">Add to calendar: <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=The+Dynasty+Continues%3A+HU+Alumni+Day+Party&amp;dates=20261016T210000Z%2F20261017T020000Z&amp;location=ONYX+Rooftop+Lounge%2C+1815+M+St+NW%2C+Washington%2C+DC&amp;details=Tickets+%2B+tables%3A+https%3A%2F%2Fdynastycontinues2026.eventbrite.com%2F%3Faff%3DJoel%0ATables%3A+text+Joel+773-425-2390%0Ahuhcweekend.com" target="_blank" rel="noopener" data-goatcounter-click="cal-g-dynasty-continues">Google</a> · <a href="dynasty-continues.ics" data-goatcounter-click="cal-ics-dynasty-continues">Apple / Outlook</a></div>
       </div>
     </article>
 
@@ -145,8 +176,10 @@ footer{margin-top:56px;padding-top:20px;border-top:3px solid var(--navy);font-si
           <dt>Dress</dt><dd>All black. Upscale and fashion forward.</dd>
         </dl>
         <div class="btns">
-          <a class="btn" href="https://noirnostalgia2026.eventbrite.com/?aff=Joel" target="_blank" rel="noopener">Get tickets + tables →</a>
+          <a class="btn" href="https://noirnostalgia2026.eventbrite.com/?aff=Joel" target="_blank" rel="noopener" data-goatcounter-click="tix-noir-nostalgia">Get tickets + tables →</a>
+          <a class="btn ghost small" href="sms:+17734252390?&body=Hey%20Joel%21%20I%20want%20a%20table%20for%20Homecoming.%20Night%3A%20___%20%20Group%20size%3A%20___" data-goatcounter-click="text-joel-noir-nostalgia">Text Joel for a table</a>
         </div>
+        <div class="cal">Add to calendar: <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Noir+Nostalgia%3A+All-Black+Soiree&amp;dates=20261017T020000Z%2F20261017T070000Z&amp;location=SAX%2C+734+11th+St+NW%2C+Washington%2C+DC&amp;details=Tickets+%2B+tables%3A+https%3A%2F%2Fnoirnostalgia2026.eventbrite.com%2F%3Faff%3DJoel%0ATables%3A+text+Joel+773-425-2390%0Ahuhcweekend.com" target="_blank" rel="noopener" data-goatcounter-click="cal-g-noir-nostalgia">Google</a> · <a href="noir-nostalgia.ics" data-goatcounter-click="cal-ics-noir-nostalgia">Apple / Outlook</a></div>
       </div>
     </article>
 
@@ -162,8 +195,10 @@ footer{margin-top:56px;padding-top:20px;border-top:3px solid var(--navy);font-si
           <dt>Extras</dt><dd>Food trucks on the patio</dd>
         </dl>
         <div class="btns">
-          <a class="btn" href="https://rtb2026.eventbrite.com/?aff=Joel" target="_blank" rel="noopener">Get tickets + tables →</a>
+          <a class="btn" href="https://rtb2026.eventbrite.com/?aff=Joel" target="_blank" rel="noopener" data-goatcounter-click="tix-remember-the-bison">Get tickets + tables →</a>
+          <a class="btn ghost small" href="sms:+17734252390?&body=Hey%20Joel%21%20I%20want%20a%20table%20for%20Homecoming.%20Night%3A%20___%20%20Group%20size%3A%20___" data-goatcounter-click="text-joel-remember-the-bison">Text Joel for a table</a>
         </div>
+        <div class="cal">Add to calendar: <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Remember+the+Bison%3A+Game+Afterparty&amp;dates=20261018T020000Z%2F20261018T070000Z&amp;location=Karma%2C+2221+Adams+Pl+NE%2C+Washington%2C+DC&amp;details=Tickets+%2B+tables%3A+https%3A%2F%2Frtb2026.eventbrite.com%2F%3Faff%3DJoel%0ATables%3A+text+Joel+773-425-2390%0Ahuhcweekend.com" target="_blank" rel="noopener" data-goatcounter-click="cal-g-remember-the-bison">Google</a> · <a href="remember-the-bison.ics" data-goatcounter-click="cal-ics-remember-the-bison">Apple / Outlook</a></div>
       </div>
     </article>
 
@@ -179,18 +214,40 @@ footer{margin-top:56px;padding-top:20px;border-top:3px solid var(--navy);font-si
           <dt>Venue</dt><dd>The Continent DC · 1110 Vermont Ave NW, Washington, DC</dd>
         </dl>
         <div class="btns">
-          <a class="btn" href="https://farewellbrunch2026.eventbrite.com/?aff=Joel" target="_blank" rel="noopener">Get tickets + tables →</a>
+          <a class="btn" href="https://farewellbrunch2026.eventbrite.com/?aff=Joel" target="_blank" rel="noopener" data-goatcounter-click="tix-farewell-brunch">Get tickets + tables →</a>
+          <a class="btn ghost small" href="sms:+17734252390?&body=Hey%20Joel%21%20I%20want%20a%20table%20for%20Homecoming.%20Night%3A%20___%20%20Group%20size%3A%20___" data-goatcounter-click="text-joel-farewell-brunch">Text Joel for a table</a>
         </div>
+        <div class="cal">Add to calendar: <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Farewell+Brunch+%2B+Day+Party&amp;dates=20261018T160000Z%2F20261019T010000Z&amp;location=The+Continent+DC%2C+1110+Vermont+Ave+NW%2C+Washington%2C+DC&amp;details=Tickets+%2B+tables%3A+https%3A%2F%2Ffarewellbrunch2026.eventbrite.com%2F%3Faff%3DJoel%0ATables%3A+text+Joel+773-425-2390%0Ahuhcweekend.com" target="_blank" rel="noopener" data-goatcounter-click="cal-g-farewell-brunch">Google</a> · <a href="farewell-brunch.ics" data-goatcounter-click="cal-ics-farewell-brunch">Apple / Outlook</a></div>
       </div>
     </article>
   </main>
 
   <footer>
     <div>Events produced by The Good Times at Howard and Events By Pres. Tickets and tables are sold on Eventbrite.</div>
-    <div>Shared by Joel Alexis, Howard alum. Want a table for your line, your class, or your crew? Reach out to me directly and I'll get you set up.</div>
+    <div>Shared by Joel Alexis, Howard alum. Want a table for your line, your class, or your crew? Text me at <a href="sms:+17734252390?&body=Hey%20Joel%21%20I%20want%20a%20table%20for%20Homecoming.%20Night%3A%20___%20%20Group%20size%3A%20___">773-425-2390</a> or DM <a href="https://instagram.com/JoePromoL" target="_blank" rel="noopener">@JoePromoL</a> and I'll get you set up.</div>
     <div class="note">Eventbrite refund policy: refunds up to 7 days before each event.</div>
   </footer>
 </div>
 
+
+<div class="stick"><a href="sms:+17734252390?&body=Hey%20Joel%21%20I%20want%20a%20table%20for%20Homecoming.%20Night%3A%20___%20%20Group%20size%3A%20___" data-goatcounter-click="text-joel-sticky">Tables? Text Joel · 773-425-2390</a></div>
+<script>
+(function(){
+  var start=Date.parse("2026-10-15T18:00:00-04:00"), end=Date.parse("2026-10-18T21:00:00-04:00");
+  var el=document.getElementById("count");
+  function pad(n){return n<10?"0"+n:n}
+  function tick(){
+    var now=Date.now();
+    if(now>=end){el.innerHTML='<span class="msg">That\'s a wrap on Homecoming 2026. See you next year.</span>';return}
+    if(now>=start){el.innerHTML='<span class="msg">Homecoming weekend is happening now. Grab tickets for tonight below.</span>';return}
+    var t=Math.floor((start-now)/1000), d=Math.floor(t/86400), h=Math.floor(t%86400/3600), m=Math.floor(t%3600/60), sec=t%60;
+    el.innerHTML='<span class="num">'+d+'</span><span class="lbl">days</span><span class="num">'+pad(h)+'</span><span class="lbl">hrs</span><span class="num">'+pad(m)+'</span><span class="lbl">min</span><span class="num">'+pad(sec)+'</span><span class="lbl">sec</span><span class="lbl" style="flex-basis:100%">until the kickoff</span>';
+  }
+  tick(); setInterval(tick,1000);
+  // channel tracking: huhcweekend.com/?r=ig etc.
+  var r=new URLSearchParams(location.search).get("r");
+  if(r){var send=function(){if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path:"source-"+r.replace(/[^a-z0-9_-]/gi,"").slice(0,20),title:"Source: "+r,event:true})}else setTimeout(send,500)};send();}
+})();
+</script>
 </body>
 </html>

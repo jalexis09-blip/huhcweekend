@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//huhcweekend//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:farewell-brunch-2026@huhcweekend.com
+DTSTAMP:20261006T000000Z
+DTSTART:20261018T160000Z
+DTEND:20261019T010000Z
+SUMMARY:Farewell Brunch + Day Party
+LOCATION:The Continent DC\, 1110 Vermont Ave NW\, Washington\, DC
+DESCRIPTION:Tickets + tables: https://farewellbrunch2026.eventbrite.com/?aff=Joel\nTables: text Joel at 773-425-2390\nAll events: https://huhcweekend.com
+URL:https://farewellbrunch2026.eventbrite.com/?aff=Joel
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Homecoming tomorrow
+END:VALARM
+END:VEVENT
+END:VCALENDAR

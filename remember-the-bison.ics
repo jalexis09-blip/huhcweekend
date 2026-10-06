@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//huhcweekend//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:remember-the-bison-2026@huhcweekend.com
+DTSTAMP:20261006T000000Z
+DTSTART:20261018T020000Z
+DTEND:20261018T070000Z
+SUMMARY:Remember the Bison: HU Homecoming Game Afterparty
+LOCATION:Karma\, 2221 Adams Pl NE\, Washington\, DC
+DESCRIPTION:Tickets + tables: https://rtb2026.eventbrite.com/?aff=Joel\nTables: text Joel at 773-425-2390\nAll events: https://huhcweekend.com
+URL:https://rtb2026.eventbrite.com/?aff=Joel
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Homecoming tomorrow
+END:VALARM
+END:VEVENT
+END:VCALENDAR

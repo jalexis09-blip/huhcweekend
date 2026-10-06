@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//huhcweekend//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:dynasty-continues-2026@huhcweekend.com
+DTSTAMP:20261006T000000Z
+DTSTART:20261016T210000Z
+DTEND:20261017T020000Z
+SUMMARY:The Dynasty Continues: HU Alumni Happy Hour + Day Party
+LOCATION:ONYX Rooftop Lounge\, 1815 M St NW\, Washington\, DC
+DESCRIPTION:Tickets + tables: https://dynastycontinues2026.eventbrite.com/?aff=Joel\nTables: text Joel at 773-425-2390\nAll events: https://huhcweekend.com
+URL:https://dynastycontinues2026.eventbrite.com/?aff=Joel
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Homecoming tomorrow
+END:VALARM
+END:VEVENT
+END:VCALENDAR

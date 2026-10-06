@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//huhcweekend//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:welcome-home-bison-2026@huhcweekend.com
+DTSTAMP:20261006T000000Z
+DTSTART:20261015T220000Z
+DTEND:20261016T060000Z
+SUMMARY:Welcome Home Bison (HU Homecoming Kickoff)
+LOCATION:SOST\, 1901 9th St NW\, Washington\, DC
+DESCRIPTION:Tickets + tables: https://whb2026.eventbrite.com/?aff=Joel\nTables: text Joel at 773-425-2390\nAll events: https://huhcweekend.com
+URL:https://whb2026.eventbrite.com/?aff=Joel
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Homecoming tomorrow
+END:VALARM
+END:VEVENT
+END:VCALENDAR

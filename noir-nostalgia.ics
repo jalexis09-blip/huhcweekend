@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//huhcweekend//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:noir-nostalgia-2026@huhcweekend.com
+DTSTAMP:20261006T000000Z
+DTSTART:20261017T020000Z
+DTEND:20261017T070000Z
+SUMMARY:Noir Nostalgia: HU Homecoming All-Black Soiree
+LOCATION:SAX\, 734 11th St NW\, Washington\, DC 20001
+DESCRIPTION:Tickets + tables: https://noirnostalgia2026.eventbrite.com/?aff=Joel\nTables: text Joel at 773-425-2390\nAll events: https://huhcweekend.com
+URL:https://noirnostalgia2026.eventbrite.com/?aff=Joel
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Homecoming tomorrow
+END:VALARM
+END:VEVENT
+END:VCALENDAR
